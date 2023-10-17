@@ -1,86 +1,179 @@
 #include <stdio.h>
 
+
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+//*************
+// ***********
+//  *********
+//   *******
+//    *****
+//     ***
+//      *
 //int main()
 //{
-//	int a = -1;
-//	int b = ~a;
-//	printf("%d\n", b);
+//	int line = 0;
+//	scanf("%d", &line);
+//	int i = 0;
+//	for (i = 0;i < line;i++)
+//	{
+//		int j = 0;
+//		for (j = 0;j < line - 1-i;j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0;j < 2*i+1;j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0;i < line-1;i++)
+//	{
+//		int j = 0;
+//		for (j = 0;j <= i;j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0;j <2*(line-1-i)-1 ;j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+
+
+//喝汽水问题，每瓶汽水1块钱，每2个空瓶子可以换1瓶汽水，20元钱可以买多少瓶汽水？
+//int main()
+//{
+//	int g_money = 0;
+//	scanf("%d", &g_money);
+//	int total = g_money;
+//	int empty = g_money;
+//	while (empty>1 )
+//	{
+//		total += empty / 2;
+//		empty=empty/2+empty%2;
+//	}
+//	printf("%d\n", total);
+//	return 0;
+//}
+
+
+//int a = 1;
+//void test()
+//{
+//	int a = 2;
+//	a += 1;   //当全局变量与局部变量均存在时，优先使用局部变量
+//}
+//
+//int test()
+//{
+//	int a = 2;
+//	a += 1;   //当全局变量与局部变量均存在时，优先使用局部变量
+//	return a;
+//}
+//
+//int main()
+//{
+//	test();
+//	printf("%d\n", a);
+//	return 0;       //a=1=全局变量
+//}
+
+
+//int main()
+//{
+//	double a = 3;
+//	a = a / 2;
+//	printf("%f", a);
 //	return 0;
 //}
 
 //int main()
 //{
-//	int i = 0, a = 1, b = 2, c = 3, d = 4;
-//	//i = a++ && ++b && d++;                           //a++ 先使用后++   ++a先++后使用,      当a=0时，a为假，因此后面不再计算
-//	i = a++ || ++b || d++;
-//	printf("i=%d\na=%d\nb=%d\nc=%d\nd=%d\n", i,a, b, c, d);
+//	double x, y;
+//	x = 3;
+//	y = x + 3.0 / 2;   //除法中有浮点数 结果才有浮点数
+//	printf("%f", y);
 //	return 0;
 //}
-//& | 按位与/按位或，拿二进制数进行与/或操作
-//&&  ||  逻辑与与逻辑或，关注数字本身的真假
 
+
+
+//求m与n的最小公倍数
 //int main()
 //{
 //	int a = 0;
 //	int b = 0;
-//	b = (a > 5 ? 3 : -3);
-//	printf("%d\n", b);
-//	return 0;
-//}
-
-
-//int main()
-//{
-//	//逗号表达式：从左到右依次计算，但输出最后一次表达式的结果
-//
-//	return 0;
-//}
-
-
-
-//创建一个结构体类型-struct Stu
-//struct Stu
-//{
-//	char name[20];
-//	int age;
-//	char id[20];
-//};
-//
-//int main()
-//{
-//	int a = 10;
-//	//使用struct Stu这个类型创建了一个学生对象s1，并初始化
-//	struct Stu s1 = { "张三",20,"20231009" };
-//	struct Stu* ps = &s1;
-//	printf("%s ", ps->name);
-//	printf("%d ", ps->age);
-//	//printf("%s ", (*ps).name);
-//	//printf("%d ", (*ps).age);
-//	//printf("%s ", s1.name);
-//	//printf("%d ", s1.age);
-//	//printf("%s\n", s1.id);
+//	scanf("%d %d", &a, &b);
+//	int m = (a > b ? a:b);
+//	//while (1)
+//	//{
+//	//	if (m % a == 0 && m % b == 0)
+//	//	{
+//	//		break;
+//	//	}
+//	//	m++;
+//	//}
+//	//printf("%d\n", m);
+//	int i = 1;
+//	while (a * i % b)
+//	{
+//		i++;
+//	}
+//	printf("%d\n", a*i);
 //	return 0;
 //}
 
 
 
-//整型提升：
-//负数的整形提升
-//char c1=-1；
-//10000001
-//高位补充符号位
-//11111111 11111111 11111111 10000001
 
-//正数的整形提升
-//char c2=1;
-//00000001
-//高位补充符号位
-//00000000 00000000 00000000 00000001
-
-//无符号数的整形提升，高位补0
+//I like Beijing.  ->  Beijing. like I;
+void reverse(char* left, char* right)
+{
+	while (left < right)
+	{
+		char tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+}
 
 int main()
 {
-	char a = 0xb6;         //0x 16进制
+	char arr[101] = { 0 };
+	//输入
+	gets(arr);
+	printf("%s\n", arr);
+	//倒置
+	int len = strlen(arr);
+	//使所有字符串反转
+	reverse(arr, arr + len - 1);
+	printf("%s\n", arr);
+	//使单个字符串反转
+	char* start = arr;
+	while (*start)
+	{
+		char* end = start;
+		while (*end != ' ' && *end != '\0')
+		{
+			end++;
+		}
+		reverse(start, end - 1);
+		end++;
+		start = end;
+	}
+	printf("%s\n", arr);
 	return 0;
 }
